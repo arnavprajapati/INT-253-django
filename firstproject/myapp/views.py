@@ -24,3 +24,12 @@ def items(request):
         content += f"<li>{item}: {cost}</li>"
     
     return HttpResponse(content)
+
+def students(request, marks):
+    if marks >= 40:
+        return HttpResponse(f"Student Passed! Marks: {marks}")
+    else:
+        return HttpResponse(f"Student Failed! Marks: {marks}")
+
+def greet(request, name):
+    return HttpResponse(f"greeting to {name}")
